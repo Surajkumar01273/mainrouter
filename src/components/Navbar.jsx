@@ -1,8 +1,14 @@
 import React from 'react'
 import react from '../assets/react.svg'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 function Navbar() {
+
+    const navigate = useNavigate();
+
+    // function handleNavigate(){
+    //     navigate('/product')
+    // }
     return (
         <div>
             <div className='flex justify-between px-10 items-center p-4 bg-gray-800 text-white sticky top-0 z-50'>
@@ -32,7 +38,7 @@ function Navbar() {
                         <li className={`hover:text-orange-400`}>Contact Us</li>
                     </NavLink>
                 </ul>
-                <button className='bg-orange-600 py-2 px-4 rounded-full text-lg text-white'>Get Started</button>
+                <button className='bg-orange-600 py-2 px-4 rounded-full text-lg text-white'onClick={() => navigate('/about')}>Get Started</button>
             </div>
         </div>
     )
